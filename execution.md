@@ -143,3 +143,30 @@ skills/infographic-stock-analysis/
 | `image-generation/` | AI image creation |
 | `VLM/` | Vision-language model |
 | `web-reader/` | Web page extraction |
+
+---
+
+Now let me check the existing skills archive and HTML file size for accurate details.
+Now I'll craft the comprehensive README.md:
+The README.md has been created at `/home/z/my-project/download/README.md`. Here's a summary of what's inside:
+
+### README.md Structure
+
+The README is designed as a **GitHub repo showcase** with rich visual formatting, including:
+
+1. **Centered hero header** with styled badges (Domain, Skill Version, Python, Plotly.js, License)
+2. **Overview** — what the pipeline does, with an Anti-Generic Philosophy comparison table (rejected vs. embraced approaches)
+3. **Live Artifact: NVIDIA Analysis** — key findings table (8 metrics) and 9 interactive charts catalog
+4. **Pipeline Architecture** — full ASCII art diagram showing all 6 phases with data flow
+5. **Design System** — color palette visualization, typography stack, component patterns, scroll-reveal animation code
+6. **Skill Document** — section-by-section breakdown of the 1,360-line skill doc, with source skills dependency tree
+7. **Pitfalls & Lessons Learned** — the top 5 critical pitfalls with full code examples (timezone mismatch, unfair backtest, hardcoded P/E, Python venv, HTML bloat), plus a summary table of all 27 pitfalls
+8. **Repository Structure** — file tree with size descriptions
+9. **Quick Start** — prerequisites, pipeline code snippet, how to view the infographic
+10. **Extending to Other Tickers** — sector-specific adjustment guide
+11. **Technical Stack** — full layer-by-layer technology table
+12. **Key Design Decisions** — 5 architectural decisions with rationale
+13. **QA Checklist Highlights** — critical validation items
+14. **License & Footer** — disclaimer and project metadata
+
+# https://chat.z.ai/s/d5c6c66f-274f-4740-a523-fc26059be893 
