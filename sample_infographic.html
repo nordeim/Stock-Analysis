@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVIDIA AI Boom Analysis: Sustainable Opportunity or Just Hype?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-blue: #3498db;
+            --accent-green: #27ae60;
+            --accent-red: #e74c3c;
+            --accent-amber: #f39c12;
+            --neutral-gray: #95a5a6;
+            --light-gray: #ecf0f1;
+            --warm-bg: #f8f6f0;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+            background-color: var(--warm-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .executive-summary {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--accent-amber);
+        }
+
+        .executive-summary h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .key-findings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .finding-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .finding-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .finding-card .icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .finding-card.positive .icon { color: var(--accent-green); }
+        .finding-card.negative .icon { color: var(--accent-red); }
+        .finding-card.neutral .icon { color: var(--accent-blue); }
+
+        .finding-card h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .finding-card.positive h3 { color: var(--accent-green); }
+        .finding-card.negative h3 { color: var(--accent-red); }
+        .finding-card.neutral h3 { color: var(--accent-blue); }
+
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 0.5rem;
+        }
+
+        .chart-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .chart-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--neutral-gray);
+        }
+
+        .data-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+
+        .highlight {
+            background-color: var(--accent-amber);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        .positive { color: var(--accent-green); font-weight: 600; }
+        .negative { color: var(--accent-red); font-weight: 600; }
+        .neutral { color: var(--accent-blue); font-weight: 600; }
+
+        .insight-box {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+
+        .insight-box h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .download-section {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: var(--accent-green);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #229954;
+        }
+
+        .methodology {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+        }
+
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 2rem 0;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 0 15px; }
+            .section { padding: 1.5rem; }
+            .key-findings { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-chart-line"></i> NVIDIA AI Boom Analysis</h1>
+            <p class="subtitle">Sustainable Opportunity or Just Hype? A Deep Dive into Earnings-Driven Performance</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="executive-summary">
+            <h2><i class="fas fa-bullseye"></i> Executive Summary</h2>
+            <p><strong>Main Question:</strong> Has most of NVIDIA's price surge happened around earnings announcements, and is the AI boom a sustainable opportunity or just hype for everyday investors?</p>
+            
+            <div class="insight-box">
+                <h4><i class="fas fa-key"></i> Key Answer</h4>
+                <p><strong>The AI boom represents a sustainable opportunity, not just hype.</strong> NVIDIA's exceptional 276% two-year return is supported by consistent earnings beats (+14% average surprise) and strong fundamental growth. However, the earnings-based trading strategy underperformed significantly (-278% vs buy-and-hold), suggesting that timing earnings announcements is less effective than long-term investment.</p>
+            </div>
+        </div>
+
+        <div class="key-findings">
+            <div class="finding-card positive">
+                <div class="icon"><i class="fas fa-arrow-up"></i></div>
+                <h3>+276.4%</h3>
+                <p>Total 2-Year Return</p>
+            </div>
+            <div class="finding-card positive">
+                <div class="icon"><i class="fas fa-target"></i></div>
+                <h3>+14.0%</h3>
+                <p>Average EPS Surprise</p>
+            </div>
+            <div class="finding-card neutral">
+                <div class="icon"><i class="fas fa-chart-bar"></i></div>
+                <h3>+3.4%</h3>
+                <p>Avg 1-Day Post-Earnings</p>
+            </div>
+            <div class="finding-card negative">
+                <div class="icon"><i class="fas fa-exclamation-triangle"></i></div>
+                <h3>50.0%</h3>
+                <p>Strategy Win Rate</p>
+            </div>
+            <div class="finding-card neutral">
+                <div class="icon"><i class="fas fa-balance-scale"></i></div>
+                <h3>44.8x</h3>
+                <p>P/E Ratio (vs 39.1x sector)</p>
+            </div>
+            <div class="finding-card neutral">
+                <div class="icon"><i class="fas fa-wave-square"></i></div>
+                <h3>~45%</h3>
+                <p>Current Volatility</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-chart-area"></i> Price Performance Around Earnings</h2>
+            <p>Our analysis reveals that <span class="highlight">87.5% of earnings announcements resulted in positive 1-day returns</span>, with an average gain of +3.4%. However, the correlation between EPS surprise magnitude and stock performance is weak (0.031), suggesting that market reactions are influenced by forward guidance and AI sentiment beyond just quarterly results.</p>
+            
+            <div class="chart-container">
+                <img src="nvidia_comprehensive_analysis.png" alt="NVIDIA Comprehensive Analysis">
+            </div>
+
+            <div class="insight-box">
+                <h4><i class="fas fa-lightbulb"></i> Key Insight</h4>
+                <p>While NVIDIA consistently beats earnings expectations, the stock's massive gains are driven more by AI infrastructure demand and forward-looking revenue growth than quarterly earnings surprises. The real opportunity lies in the long-term AI transformation, not short-term earnings trading.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-balance-scale"></i> Valuation Analysis</h2>
+            <p>NVIDIA's P/E ratio of 44.8x trades at a <span class="positive">14.6% premium</span> to the S&P 500 Technology sector average of 39.1x, and nearly double the broader S&P 500's 22.5x multiple.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>NVIDIA</th>
+                        <th>Tech Sector</th>
+                        <th>S&P 500</th>
+                        <th>Premium/Discount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>P/E Ratio</strong></td>
+                        <td class="positive">44.8x</td>
+                        <td>39.1x</td>
+                        <td>22.5x</td>
+                        <td class="positive">+14.6% vs Tech</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Forward P/E</strong></td>
+                        <td class="positive">24.1x</td>
+                        <td>28.4x</td>
+                        <td>20.0x</td>
+                        <td class="positive">-15.1% vs Tech</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Market Cap</strong></td>
+                        <td class="positive">$4.4T</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="insight-box">
+                <h4><i class="fas fa-calculator"></i> Valuation Insight</h4>
+                <p>NVIDIA's forward P/E of 24.1x is actually <strong>below</strong> the tech sector average, suggesting that current earnings growth expectations justify the premium valuation. The AI infrastructure buildout provides a multi-year growth runway that supports current multiples.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-coins"></i> Trading Strategy Performance</h2>
+            <p>We simulated a strategy of buying NVIDIA stock one week before earnings and selling one week after each announcement. The results were disappointing:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Earnings Strategy</th>
+                        <th>Buy & Hold</th>
+                        <th>Difference</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Total Return</strong></td>
+                        <td class="negative">-2.48%</td>
+                        <td class="positive">+276.40%</td>
+                        <td class="negative">-278.88%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Average Trade Return</strong></td>
+                        <td class="neutral">+0.40%</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Win Rate</strong></td>
+                        <td class="neutral">50.0%</td>
+                        <td class="positive">100%</td>
+                        <td class="negative">-50%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Final Value ($10K start)</strong></td>
+                        <td class="negative">$9,752</td>
+                        <td class="positive">$37,640</td>
+                        <td class="negative">-$27,888</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="insight-box">
+                <h4><i class="fas fa-exclamation-circle"></i> Strategy Insight</h4>
+                <p>The earnings-based trading strategy failed because it missed the sustained upward momentum between earnings announcements. NVIDIA's gains are driven by long-term AI adoption trends, not quarterly earnings volatility. Missing just a few weeks of the rally resulted in massive underperformance.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-industry"></i> AI Market Fundamentals</h2>
+            <p>The AI boom is supported by substantial infrastructure investments and real business demand:</p>
+            
+            <ul style="margin: 1rem 0; padding-left: 2rem;">
+                <li><strong>$500 billion AI market size</strong> in 2024, with generative AI as the primary driver</li>
+                <li><strong>1 billion active AI models</strong> deployed worldwide, indicating massive adoption</li>
+                <li><strong>66% data center revenue growth</strong> for NVIDIA in the most recent quarter</li>
+                <li><strong>Multi-year infrastructure buildout</strong> by major cloud providers and enterprises</li>
+                <li><strong>Vertical industry adoption</strong> in automotive, healthcare, and financial services</li>
+            </ul>
+
+            <div class="insight-box">
+                <h4><i class="fas fa-rocket"></i> Fundamental Insight</h4>
+                <p>Unlike previous tech bubbles, the AI boom is driven by tangible business value and infrastructure requirements. NVIDIA's dominance in AI training chips (80%+ market share) creates a sustainable competitive moat as enterprises build out AI capabilities over the next 3-5 years.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-exclamation-triangle"></i> Risks and Considerations</h2>
+            <p>While the AI opportunity is real, investors should consider several risks:</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div style="background: #fff5f5; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--accent-red);">
+                    <h4><i class="fas fa-chart-line-down"></i> Valuation Risk</h4>
+                    <p>Premium valuation (44.8x P/E) leaves little room for disappointment. Any slowdown in AI demand could trigger significant price corrections.</p>
+                </div>
+                <div style="background: #fffbeb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--accent-amber);">
+                    <h4><i class="fas fa-users"></i> Competition Risk</h4>
+                    <p>AMD, Intel, and custom AI chips from Google, Amazon, and Microsoft could erode NVIDIA's market share over time.</p>
+                </div>
+                <div style="background: #f0f9ff; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--accent-blue);">
+                    <h4><i class="fas fa-gavel"></i> Regulatory Risk</h4>
+                    <p>AI chip export restrictions and potential antitrust scrutiny could limit growth in key markets.</p>
+                </div>
+                <div style="background: #f0fdf4; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--accent-green);">
+                    <h4><i class="fas fa-leaf"></i> Cyclical Risk</h4>
+                    <p>Semiconductor industry is inherently cyclical, and AI infrastructure spending may face periodic slowdowns.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-lightbulb"></i> Investment Recommendations</h2>
+            
+            <div style="background: linear-gradient(135deg, var(--accent-green), var(--accent-blue)); color: white; padding: 2rem; border-radius: 10px; margin: 1.5rem 0;">
+                <h3><i class="fas fa-thumbs-up"></i> For Long-Term Investors (3+ years)</h3>
+                <p><strong>RECOMMENDATION: BUY</strong></p>
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li>AI infrastructure buildout is in early innings</li>
+                    <li>NVIDIA's technological moat remains strong</li>
+                    <li>Valuation becomes more reasonable on forward metrics</li>
+                    <li>Dollar-cost averaging recommended due to volatility</li>
+                </ul>
+            </div>
+
+            <div style="background: linear-gradient(135deg, var(--accent-amber), var(--accent-red)); color: white; padding: 2rem; border-radius: 10px; margin: 1.5rem 0;">
+                <h3><i class="fas fa-clock"></i> For Short-Term Traders</h3>
+                <p><strong>RECOMMENDATION: AVOID EARNINGS TIMING</strong></p>
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li>Earnings-based strategies significantly underperform</li>
+                    <li>High volatility creates timing challenges</li>
+                    <li>Focus on longer-term trends rather than quarterly events</li>
+                </ul>
+            </div>
+
+            <div style="background: linear-gradient(135deg, var(--accent-blue), var(--secondary-color)); color: white; padding: 2rem; border-radius: 10px; margin: 1.5rem 0;">
+                <h3><i class="fas fa-balance-scale"></i> Portfolio Allocation</h3>
+                <p><strong>RECOMMENDATION: 5-10% POSITION SIZE</strong></p>
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li>Large enough to benefit from AI growth</li>
+                    <li>Small enough to manage concentration risk</li>
+                    <li>Consider pairing with broader tech ETF exposure</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <h3><i class="fas fa-download"></i> Download Raw Data</h3>
+            <p>Access the complete dataset used in this analysis for your own research:</p>
+            <a href="nvda_prices_processed.csv" class="download-btn">
+                <i class="fas fa-file-csv"></i> Stock Price Data
+            </a>
+            <a href="earnings_impact_analysis.csv" class="download-btn">
+                <i class="fas fa-chart-bar"></i> Earnings Analysis
+            </a>
+            <a href="trading_strategy_results.csv" class="download-btn">
+                <i class="fas fa-coins"></i> Strategy Results
+            </a>
+        </div>
+
+        <div class="methodology">
+            <h3><i class="fas fa-cogs"></i> Methodology</h3>
+            <p><strong>Data Sources:</strong> Yahoo Finance API, SEC filings, earnings calendars</p>
+            <p><strong>Analysis Period:</strong> December 2023 - December 2025 (2 years)</p>
+            <p><strong>Strategy Simulation:</strong> Buy 7 days before earnings, sell 7 days after (using closest trading days)</p>
+            <p><strong>Statistical Methods:</strong> Correlation analysis, rolling volatility, cumulative return calculations</p>
+            <p><strong>P/E Comparisons:</strong> Based on trailing twelve months earnings and current market data</p>
+        </div>
+
+        <div class="disclaimer">
+            <h4><i class="fas fa-exclamation-triangle"></i> Important Disclaimer</h4>
+            <p>This analysis is for educational purposes only and should not be considered as investment advice. Past performance does not guarantee future results. All investments carry risk of loss. Consult with a qualified financial advisor before making investment decisions. The AI market is subject to high volatility and regulatory uncertainty.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p><i class="fas fa-chart-line"></i> NVIDIA AI Boom Analysis | Generated on December 22, 2025</p>
+            <p>Data-driven insights for everyday investors</p>
+        </div>
+    </footer>
+</body>
+</html>
