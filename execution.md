@@ -95,3 +95,51 @@ The original `stock-analysis_SKILL.md` was a **theoretical pipeline** — it had
 9. **Ambient radial gradients** — depth without distraction on dark backgrounds
 
 # https://chat.z.ai/s/d5c6c66f-274f-4740-a523-fc26059be893 
+
+---
+
+Now let me also copy our new skill into the archive's skill folder structure and create an updated archive:
+Done. Here's the summary:
+
+---
+
+## ✅ Skills Archive Created
+
+**File:** `/home/z/my-project/download/skills_archive.tar.gz` (39MB, gzipped)
+
+### Archive Contents
+
+| Detail | Value |
+|--------|-------|
+| **Total files** | 1,356 |
+| **Compression** | gzip |
+| **Size** | 39MB |
+| **Exclusions** | `__pycache__/`, `*.pyc`, `.git/` |
+
+### New Skill Included
+
+The archive includes the new skill we just created at:
+
+```
+skills/infographic-stock-analysis/
+├── SKILL.md                                          # The comprehensive 1,360-line skill document
+└── references/
+    └── source-stock-analysis_SKILL.md                 # Original source skill for provenance
+```
+
+### Key Skills in Archive (relevant to our work)
+
+| Skill Folder | Purpose |
+|-------------|---------|
+| `infographic-stock-analysis/` | **NEW** — Our distilled workflow |
+| `charts/` | Chart/diagram routing, color systems, anti-patterns |
+| `web-search/` | Dynamic data sourcing |
+| `stock-analysis-skill/` | Original TypeScript-based stock analysis (different from the uploaded MD) |
+| `docx/` | Word document generation |
+| `pdf/` | PDF generation |
+| `xlsx/` | Spreadsheet generation |
+| `design/` | 40+ design templates, style skills, brand inspiration |
+| `fullstack-dev/` | Next.js web development |
+| `image-generation/` | AI image creation |
+| `VLM/` | Vision-language model |
+| `web-reader/` | Web page extraction |
