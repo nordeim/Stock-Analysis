@@ -45,3 +45,53 @@ The infographic is complete. Here's the executive summary of what was delivered:
 - DM Serif Display (editorial headings) + JetBrains Mono (data/metrics)
 - Terminal green (#00d4aa) accent — desaturated crimson (#ff4757) for negatives
 - Scroll-reveal animations, hover micro-interactions, responsive breakpoints
+
+---
+
+I'll approach this with the same rigor. Let me first review everything I did, the exact sequence, the issues encountered, and then synthesize it into a comprehensive, reusable SKILL.md.
+Now let me carefully compose the comprehensive SKILL.md:
+Now let me verify the file and update the worklog:
+Done. Here's a summary of what was delivered:
+
+---
+
+## ✅ Comprehensive SKILL.md Created
+
+**File:** `/home/z/my-project/download/SKILL_Infographic_Stock_Analysis.md` (1,360 lines, 56KB)
+
+### What Makes This Document Different from the Source Skill
+
+The original `stock-analysis_SKILL.md` was a **theoretical pipeline** — it had placeholder functions (`pass`), hardcoded defaults (`sector_pe = 39.1`), and a basic HTML template. This new SKILL.md is **battle-tested knowledge** distilled from actual execution, including:
+
+### Structure (14 Sections + 3 Appendices)
+
+| Section | What It Covers |
+|---------|---------------|
+| **1. Overview & Philosophy** | Anti-generic mandate, technical rigor requirements |
+| **2. Source Skills & Dependencies** | stock-analysis (primary), charts (augmentation), web-search (augmentation) — with exact version constraints and critical notes |
+| **3. Environment Setup & Pitfalls** | The **#1 issue**: Python venv mismatch (system Python 3.13 vs venv Python 3.12), yfinance install timeout, rate limiting |
+| **4. Data Acquisition** | Updated functions with `float()` wrapping, `pd.notna()` checks, empty DataFrame handling |
+| **5. Data Processing** | Timezone normalization (mandatory), JSON serialization helpers |
+| **6. Multi-Dimensional Analysis** | Event study, fair backtest, valuation, risk metrics — with interpretation guides |
+| **7. Web Research Augmentation** | **Non-negotiable** dynamic sourcing, 7 verified data sources, fallback when search API fails |
+| **8. Avant-Garde HTML Generation** | 11 design decisions with rationale (enhancements over source skill), full design system, 9-chart architecture |
+| **9. QA Validation** | Automated check suite covering data, stats, strategy, valuation, HTML, design |
+| **10. Lessons Learned** | **27 documented pitfalls** across 4 categories with symptoms and resolutions |
+| **11. Design System Reference** | Complete CSS custom properties, component patterns, responsive breakpoints |
+| **12. Chart Architecture** | Data serialization strategy, Plotly.js config, client-side regression computation |
+| **13. Reusable Templates** | Full pipeline orchestration, JSON serialization helper |
+| **14. Quality Checklist** | 50+ verification items across 7 categories |
+
+### Key Knowledge That Didn't Exist in the Source Skill
+
+1. **Python venv mismatch** — the most time-consuming issue (5+ failed pip installs before diagnosis)
+2. **Hardcoded sector_pe = 39.1 is dangerously wrong** — actual semiconductor trailing P/E is 100.2x (Damodaran 2026)
+3. **JSON embedding > Plotly.to_html()** — 82KB vs 500KB+ file size
+4. **Negative alpha on positive-return stocks** — must be explained, not just reported
+5. **"Sell the news" is real** — NVDA had only 25% positive earnings-day returns despite beating estimates
+6. **Revenue trajectory chart** — the most compelling visual, not in original skill
+7. **Web search fallback** — direct page reading when search API times out
+8. **3-variant insight boxes** — green/red/amber semantic meaning
+9. **Ambient radial gradients** — depth without distraction on dark backgrounds
+
+# https://chat.z.ai/s/d5c6c66f-274f-4740-a523-fc26059be893 
